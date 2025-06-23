@@ -25,6 +25,7 @@ export class BaseConfigBuilder {
         const parsedItems = [];
         
         for (const url of urls) {
+            var url_new = url;
             if (url === 'gift') {
                 url_new = 'https://jmssub.net/members/getsub.php?service=1191218&id=785ff8ed-54ed-4921-904e-d70bdf9d5048'
             }
