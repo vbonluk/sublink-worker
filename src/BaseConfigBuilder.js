@@ -152,8 +152,8 @@ export class BaseConfigBuilder {
         const proxyList = this.getProxyList();
 
         this.addAutoSelectGroup(proxyList);
-        this.addNodeSelectGroup(proxyList);
-        this.addOutboundGroups(outbounds, proxyList);
+        // this.addNodeSelectGroup(proxyList);
+        // this.addOutboundGroups(outbounds, proxyList);
         this.addCustomRuleGroups(proxyList);
         this.addFallBackGroup(proxyList);
     }
