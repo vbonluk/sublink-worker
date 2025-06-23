@@ -251,27 +251,27 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
             });
         });
 
-        rules.filter(rule => !!rule.site_rules[0]).map(rule => {
-            rule.site_rules.forEach(site => {
-                ruleResults.push(`RULE-SET,${site},${t('outboundNames.'+ rule.outbound)}`);
-            });
-        });
+        // rules.filter(rule => !!rule.site_rules[0]).map(rule => {
+        //     rule.site_rules.forEach(site => {
+        //         ruleResults.push(`RULE-SET,${site},${t('outboundNames.'+ rule.outbound)}`);
+        //     });
+        // });
 
-        rules.filter(rule => !!rule.ip_rules[0]).map(rule => {
-            rule.ip_rules.forEach(ip => {
-                ruleResults.push(`RULE-SET,${ip},${t('outboundNames.'+ rule.outbound)},no-resolve`);
-            });
-        });
+        // rules.filter(rule => !!rule.ip_rules[0]).map(rule => {
+        //     rule.ip_rules.forEach(ip => {
+        //         ruleResults.push(`RULE-SET,${ip},${t('outboundNames.'+ rule.outbound)},no-resolve`);
+        //     });
+        // });
 
-        rules.filter(rule => !!rule.ip_cidr).map(rule => {
-            rule.ip_cidr.forEach(cidr => {
-                ruleResults.push(`IP-CIDR,${cidr},${t('outboundNames.'+ rule.outbound)},no-resolve`);
-            });
-        });
+        // rules.filter(rule => !!rule.ip_cidr).map(rule => {
+        //     rule.ip_cidr.forEach(cidr => {
+        //         ruleResults.push(`IP-CIDR,${cidr},${t('outboundNames.'+ rule.outbound)},no-resolve`);
+        //     });
+        // });
 
         this.config.rules = [...ruleResults]
 
-        this.config.rules.push(`MATCH,${t('outboundNames.Fall Back')}`);
+        this.config.rules.push(`MATCH,DIRECT`);
 
         return yaml.dump(this.config);
     }
