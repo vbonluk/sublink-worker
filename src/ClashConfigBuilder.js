@@ -216,7 +216,7 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         this.config['proxy-groups'].push({
             type: "select",
             name: t('outboundNames.Fall Back'),
-            proxies: "DIRECT"
+            proxies: ['DIRECT']
         });
     }
 
