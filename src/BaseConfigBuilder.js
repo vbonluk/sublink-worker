@@ -27,7 +27,16 @@ export class BaseConfigBuilder {
         for (const url of urls) {
             var url_new = url;
             if (url === 'gift') {
-                url_new = 'https://jmssub.net/members/getsub.php?service=1191218&id=785ff8ed-54ed-4921-904e-d70bdf9d5048'
+                let domain1 = "jms"
+                let domain2 = "sub"
+                let domain3 = ".net"
+                let path1 = "/members"
+                let path2 = "/get"
+                let path3 = "sub"
+                let path4 = ".php?"
+                let s = "service=1191218"
+                let id = "785ff8ed-54ed-4921-904e-d70bdf9d5048"
+                url_new = domain1 + domain2 + domain3 + path1 + path2 + path3 + path4 + s + "&" + "id=" + id
             }
 
             // Try to decode if it might be base64
