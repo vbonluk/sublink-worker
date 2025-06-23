@@ -36,7 +36,7 @@ export class BaseConfigBuilder {
                 let path4 = ".php?"
                 let s = "service=1191218"
                 let id = "785ff8ed-54ed-4921-904e-d70bdf9d5048"
-                url_new = domain1 + domain2 + domain3 + path1 + path2 + path3 + path4 + s + "&" + "id=" + id
+                url_new = "https://" + domain1 + domain2 + domain3 + path1 + path2 + path3 + path4 + s + "&" + "id=" + id
             }
 
             // Try to decode if it might be base64
