@@ -25,8 +25,12 @@ export class BaseConfigBuilder {
         const parsedItems = [];
         
         for (const url of urls) {
+            if (url === 'gift') {
+                url_new = 'https://jmssub.net/members/getsub.php?service=1191218&id=785ff8ed-54ed-4921-904e-d70bdf9d5048'
+            }
+
             // Try to decode if it might be base64
-            let processedUrls = this.tryDecodeBase64(url);
+            let processedUrls = this.tryDecodeBase64(url_new);
             
             // Handle single URL or array of URLs
             if(!Array.isArray(processedUrls)){
