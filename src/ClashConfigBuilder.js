@@ -233,10 +233,10 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         const { site_rule_providers, ip_rule_providers } = generateClashRuleSets(this.selectedRules, this.customRules);
         
         // 添加规则集提供者
-        this.config['rule-providers'] = {
-            ...site_rule_providers,
-            ...ip_rule_providers
-        };
+        // this.config['rule-providers'] = {
+        //     ...site_rule_providers,
+        //     ...ip_rule_providers
+        // };
 
         // 使用RULE-SET规则格式替代原有的GEOSITE/GEOIP
         // Rule-Set & Domain-Set:  To reduce DNS leaks and unnecessary DNS queries,
