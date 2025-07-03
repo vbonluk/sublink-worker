@@ -80,9 +80,9 @@ const translations = {
     jsonValidationErrors: 'JSON验证错误',
     // 规则名称和出站名称的翻译
     outboundNames: {
-      'Auto Select': '⚡ 自动选择',
+      'Auto Select': '⚡ TestFairy Auto',
       'Node Select': '🚀 节点选择',
-      'Fall Back': '🐟 漏网之鱼',
+      'Fall Back': '🐟 TestFairy',
       'Ad Block': '🛑 广告拦截',
       'AI Services': '💬 AI 服务',
       'Bilibili': '📺 哔哩哔哩',
