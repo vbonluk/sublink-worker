@@ -276,6 +276,7 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         this.config.rules.push(`DOMAIN-SUFFIX,testfairy.com,${t('outboundNames.TestFairy Auto')}`);
         this.config.rules.push(`DOMAIN-SUFFIX,amazonaws.com,${t('outboundNames.TestFairy Auto')}`);
         this.config.rules.push(`MATCH,DIRECT`);
+        
 
         return yaml.dump(this.config);
     }
