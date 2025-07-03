@@ -172,6 +172,7 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         this.config['proxy-groups'].push({
             name: t('outboundNames.Auto Select'),
             type: 'url-test',
+            icon: 'https://tu.19216861.xyz/dico-logo.png',
             proxies: DeepCopy(proxyList),
             url: 'https://www.gstatic.com/generate_204',
             interval: 300,
