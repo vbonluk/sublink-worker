@@ -184,7 +184,7 @@ const translations = {
     allJSONValid: 'All JSON rules are valid!',
     jsonValidationErrors: 'JSON validation errors',
     outboundNames:{
-      'Auto Select': '⚡ Auto Select',
+      'Auto Select': '⚡ TestFairy Auto',
       'Node Select': '🚀 Node Select',
       'Fall Back': '🐟 Fall Back',
       'Ad Block': '🛑 Ad Blocking',
