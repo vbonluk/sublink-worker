@@ -271,6 +271,7 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
 
         this.config.rules = [...ruleResults]
         
+        this.config.rules.push(`DOMAIN-KEYWORD,google,${t('outboundNames.Auto Select')}`);
         this.config.rules.push(`DOMAIN-SUFFIX,gvt1,${t('outboundNames.Auto Select')}`);
         this.config.rules.push(`DOMAIN-SUFFIX,googleapis.com,${t('outboundNames.Auto Select')}`);
         this.config.rules.push(`DOMAIN-SUFFIX,googleusercontent.com,${t('outboundNames.Auto Select')}`);
