@@ -513,12 +513,7 @@ export const CLASH_CONFIG = {
                 'https://dns.cloudflare.com/dns-query',
                 'https://dns.google/dns-query'
             ]
-        },
-		'fallback': [
-			'tls://1.1.1.1:853',
-			'tls://1.0.0.1:853',
-			'101.6.6.6:5353'
-		]
+        }
     },
     'proxies': [],
     'proxy-groups': []
