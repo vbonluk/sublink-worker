@@ -493,32 +493,22 @@ export const CLASH_CONFIG = {
     },
     'dns': {
         'enable': true,
-        'ipv6': true,
+        'ipv6': false,
         'respect-rules': true,
         'enhanced-mode': 'fake-ip',
         'nameserver': [
             'https://120.53.53.53/dns-query',
-            'https://223.5.5.5/dns-query'
+            'https://223.5.5.5/dns-query',
+            'https://1.1.1.1/dns-query',
+			'tls://dns.adguard.com:853'
         ],
-        'proxy-server-nameserver': [
-            'https://120.53.53.53/dns-query',
-            'https://223.5.5.5/dns-query'
-        ],
-        'nameserver-policy': {
-            'geosite:cn,private': [
-                'https://120.53.53.53/dns-query',
-                'https://223.5.5.5/dns-query'
-            ],
-            'geosite:geolocation-!cn': [
-                'https://dns.cloudflare.com/dns-query',
-                'https://dns.google/dns-query'
-            ]
-        },
-		'fallback': [
-			'tls://1.1.1.1:853',
-			'tls://1.0.0.1:853',
-			'101.6.6.6:5353'
-		]
+        'default-nameserver': [
+            '119.29.29.29',
+            '119.28.28.28',
+            '1.0.0.1',
+			'208.67.222.222',
+			'1.2.4.8'
+        ]
     },
     'proxies': [],
     'proxy-groups': []
