@@ -494,7 +494,6 @@ export const CLASH_CONFIG = {
     'dns': {
         'enable': true,
         'ipv6': false,
-        'respect-rules': true,
         'enhanced-mode': 'fake-ip',
         'nameserver': [
             'https://120.53.53.53/dns-query',
