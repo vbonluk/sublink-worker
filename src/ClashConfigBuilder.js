@@ -234,7 +234,7 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         const { site_rule_providers, ip_rule_providers } = generateClashRuleSets(this.selectedRules, this.customRules);
 
         // Simon添加，参考：https://www.aloxaf.com/2025/04/how_to_use_geosite/
-        const fakeIpFilter = {
+        fakeIpFilter = {
             '<<': '*domain_rule',
             'url': 'https://cdn.jsdelivr.net/gh/juewuy/ShellCrash@dev/public/fake_ip_filter.list',
             'path': './ruleset/fake_ip_filter.list'
