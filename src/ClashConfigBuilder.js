@@ -232,9 +232,18 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         
         // 获取.mrs规则集配置
         const { site_rule_providers, ip_rule_providers } = generateClashRuleSets(this.selectedRules, this.customRules);
+
+        // Simon添加，参考：https://www.aloxaf.com/2025/04/how_to_use_geosite/
+        fakeIpFilter = {
+            '<<': '*domain_rule',
+            'url': 'https://cdn.jsdelivr.net/gh/juewuy/ShellCrash@dev/public/fake_ip_filter.list',
+            'path': './ruleset/fake_ip_filter.list'
+        }
+
         
         // 添加规则集提供者
         this.config['rule-providers'] = {
+            fakeIpFilter,
             ...site_rule_providers,
             ...ip_rule_providers
         };

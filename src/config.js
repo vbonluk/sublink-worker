@@ -493,17 +493,29 @@ export const CLASH_CONFIG = {
     },
     'dns': {
         'enable': true,
-        'ipv6': true,
-        'respect-rules': true,
+        'ipv6': false,
         'enhanced-mode': 'fake-ip',
+		'fake-ip-range': '198.18.0.1/16',
+		'fake-ip-filter': [
+			'rule-set:fake-ip-filter'
+		],
+		'prefer-h3': false,
+		'default-nameserver': [
+			'223.5.5.5'
+		],
         'nameserver': [
-            'https://120.53.53.53/dns-query',
-            'https://223.5.5.5/dns-query'
+            'https://dns.google/dns-query#PROXY&ecs=120.76.0.0/14&ecs-override=true'
         ],
         'proxy-server-nameserver': [
+			'223.5.5.5',
             'https://120.53.53.53/dns-query',
             'https://223.5.5.5/dns-query'
         ],
+		'direct-nameserver': [
+			'https://doh.pub/dns-query',
+			'https://223.5.5.5/dns-query',
+			'https://doh.360.cn/dns-query'
+		],
         'nameserver-policy': {
             'geosite:cn,private': [
                 'https://120.53.53.53/dns-query',
