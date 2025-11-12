@@ -233,17 +233,16 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         // 获取.mrs规则集配置
         const { site_rule_providers, ip_rule_providers } = generateClashRuleSets(this.selectedRules, this.customRules);
 
-        // Simon添加，参考：https://www.aloxaf.com/2025/04/how_to_use_geosite/
+        // 生成符合 YAML merge key 语法的 fake-ip-filter
         const fakeIpFilter = {
             '<<': '*domain_rule',
-            'url': 'https://cdn.jsdelivr.net/gh/juewuy/ShellCrash@dev/public/fake_ip_filter.list',
-            'path': './ruleset/fake_ip_filter.list'
-        }
+            url: 'https://cdn.jsdelivr.net/gh/juewuy/ShellCrash@dev/public/fake_ip_filter.list',
+            path: './ruleset/fake_ip_filter.list'
+        };
 
-        
-        // 添加规则集提供者
+        // 添加规则集提供者，fake-ip-filter 作为 key
         this.config['rule-providers'] = {
-            fakeIpFilter,
+            'fake-ip-filter': fakeIpFilter,
             ...site_rule_providers,
             ...ip_rule_providers
         };
@@ -280,9 +279,11 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         });
 
         this.config.rules = [...ruleResults]
-
         this.config.rules.push(`MATCH,${t('outboundNames.Fall Back')}`);
 
-        return yaml.dump(this.config);
+        // 先 dump，再替换 '<<': *domain_rule 为 <<: *domain_rule
+        let yamlStr = yaml.dump(this.config);
+        yamlStr = yamlStr.replace(/'<<': \*domain_rule/g, '<<: *domain_rule');
+        return yamlStr;
     }
 }
