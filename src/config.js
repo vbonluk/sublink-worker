@@ -124,6 +124,12 @@ export const UNIFIED_RULES = [
 		outbound: t('outboundNames.HF'),
 		site_rules: ['HF'],
 		ip_rules: []
+	},
+	{
+		name: 'HFAccess',
+		outbound: t('outboundNames.HFAccess'),
+		site_rules: ['HFAccess'],
+		ip_rules: []
 	}
 ];
 
@@ -361,6 +367,18 @@ export function generateClashRuleSets(selectedRules = [], customRules = []) {
       behavior: 'classical',
       url: `${VBONLUK_SITE_RULE_SET_BASE_URL}HF.yaml`,
       path: './ruleset/HF.yaml',
+      interval: 86400
+    };
+  }
+
+  // modifiy HFAccess rule set if included
+  if(selectedRules.includes('HFAccess')){
+    site_rule_providers['HFAccess'] = {
+      type: 'http',
+      format: 'yaml',
+      behavior: 'classical',
+      url: `${VBONLUK_SITE_RULE_SET_BASE_URL}HFAccess.yaml`,
+      path: './ruleset/HFAccess.yaml',
       interval: 86400
     };
   }

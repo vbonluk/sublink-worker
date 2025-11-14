@@ -103,7 +103,8 @@ const translations = {
       'Non-China': '🌐 非中国',
       'Manual Switch': '🖐️ 手动切换',
       'GLOBAL': 'GLOBAL',
-      'HF': 'HF'
+      'HF': 'HF',
+      'HFAccess': 'HFAccess'
     },
     groupByCountry: '按国家分组',
     groupByCountryTip: '仅 Clash/Surge/SingBox 生效',
@@ -211,7 +212,8 @@ const translations = {
       'Non-China': '🌐 Non-China',
       'Manual Switch': '🖐️ Manual Switch',
       'GLOBAL': 'GLOBAL',
-      'HF': 'HF'
+      'HF': 'HF',
+      'HFAccess': 'HFAccess'
     },
     groupByCountry: 'Group by Country',
     groupByCountryTip: 'Clash/Surge/SingBox only',
@@ -319,7 +321,8 @@ const translations = {
       'Non-China': '🌐 خارج از چین',
       'Manual Switch': '🖐️ Manual Switch',
       'GLOBAL': 'GLOBAL',
-      'HF': 'HF'
+      'HF': 'HF',
+      'HFAccess': 'HFAccess'
     },
     groupByCountry: 'گروه‌بندی بر اساس کشور',
     groupByCountryTip: 'فقط Clash/Surge/SingBox',
@@ -427,7 +430,8 @@ const translations = {
       'Non-China': '🌐 За пределами Китая',
       'Manual Switch': '🖐️ Ручной выбор',
       'GLOBAL': 'GLOBAL',
-      'HF': 'HF'
+      'HF': 'HF',
+      'HFAccess': 'HFAccess'
     },
     groupByCountry: 'Группировать по странам',
     groupByCountryTip: 'Только для Clash/Surge/SingBox',
