@@ -18,6 +18,18 @@ export const UNIFIED_RULES = [
 		ip_rules: []
 	},
 	{
+		name: 'HF',
+		outbound: t('outboundNames.HF'),
+		site_rules: ['HF'],
+		ip_rules: []
+	},
+	{
+		name: 'HFAccess',
+		outbound: t('outboundNames.HFAccess'),
+		site_rules: ['HFAccess'],
+		ip_rules: []
+	},
+	{
 		name: 'AI Services',
 		outbound: t('outboundNames.AI Services'),
 		site_rules: ['category-ai-!cn',],
@@ -117,18 +129,6 @@ export const UNIFIED_RULES = [
 		name: 'Non-China',
 		outbound: t('outboundNames.Non-China'),
 		site_rules: ['geolocation-!cn'],
-		ip_rules: []
-	},
-	{
-		name: 'HF',
-		outbound: t('outboundNames.HF'),
-		site_rules: ['HF'],
-		ip_rules: []
-	},
-	{
-		name: 'HFAccess',
-		outbound: t('outboundNames.HFAccess'),
-		site_rules: ['HFAccess'],
 		ip_rules: []
 	}
 ];
