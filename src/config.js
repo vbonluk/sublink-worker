@@ -358,7 +358,7 @@ export function generateClashRuleSets(selectedRules = [], customRules = []) {
     site_rule_providers['HF'] = {
       type: 'http',
       format: 'yaml',
-      behavior: 'domain',
+      behavior: 'classical',
       url: `${VBONLUK_SITE_RULE_SET_BASE_URL}HF.yaml`,
       path: './ruleset/HF.yaml',
       interval: 86400
