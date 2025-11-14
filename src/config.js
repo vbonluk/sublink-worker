@@ -497,10 +497,14 @@ export const CLASH_CONFIG = {
         'respect-rules': true,
         'enhanced-mode': 'fake-ip',
         'nameserver': [
+            'https://doh.pub/dns-query',
+            'https://dns.alidns.com/dns-query',
             'https://120.53.53.53/dns-query',
             'https://223.5.5.5/dns-query'
         ],
         'proxy-server-nameserver': [
+            'https://doh.pub/dns-query',
+            'https://dns.alidns.com/dns-query',
             'https://120.53.53.53/dns-query',
             'https://223.5.5.5/dns-query'
         ],
