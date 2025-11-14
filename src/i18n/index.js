@@ -102,7 +102,8 @@ const translations = {
       'Cloud Services': '☁️ 云服务',
       'Non-China': '🌐 非中国',
       'Manual Switch': '🖐️ 手动切换',
-      'GLOBAL': 'GLOBAL'
+      'GLOBAL': 'GLOBAL',
+      'HF': 'HF'
     },
     groupByCountry: '按国家分组',
     groupByCountryTip: '仅 Clash/Surge/SingBox 生效',
@@ -209,7 +210,8 @@ const translations = {
       'Cloud Services': '☁️ Cloud Services',
       'Non-China': '🌐 Non-China',
       'Manual Switch': '🖐️ Manual Switch',
-      'GLOBAL': 'GLOBAL'
+      'GLOBAL': 'GLOBAL',
+      'HF': 'HF'
     },
     groupByCountry: 'Group by Country',
     groupByCountryTip: 'Clash/Surge/SingBox only',
@@ -316,7 +318,8 @@ const translations = {
       'Cloud Services': '☁️ سرویس‌های ابری',
       'Non-China': '🌐 خارج از چین',
       'Manual Switch': '🖐️ Manual Switch',
-      'GLOBAL': 'GLOBAL'
+      'GLOBAL': 'GLOBAL',
+      'HF': 'HF'
     },
     groupByCountry: 'گروه‌بندی بر اساس کشور',
     groupByCountryTip: 'فقط Clash/Surge/SingBox',
@@ -423,7 +426,8 @@ const translations = {
       'Cloud Services': '☁️ Облачные сервисы',
       'Non-China': '🌐 За пределами Китая',
       'Manual Switch': '🖐️ Ручной выбор',
-      'GLOBAL': 'GLOBAL'
+      'GLOBAL': 'GLOBAL',
+      'HF': 'HF'
     },
     groupByCountry: 'Группировать по странам',
     groupByCountryTip: 'Только для Clash/Surge/SingBox',

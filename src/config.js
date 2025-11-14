@@ -3,6 +3,7 @@ import { t } from './i18n/index.js';
 export const SITE_RULE_SET_BASE_URL = 'https://gh-proxy.com/https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/';
 export const IP_RULE_SET_BASE_URL = 'https://gh-proxy.com/https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geoip/';
 export const CLASH_SITE_RULE_SET_BASE_URL = 'https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/';
+export const VBONLUK_SITE_RULE_SET_BASE_URL = 'https://gh-proxy.org/https://raw.githubusercontent.com/vbonluk/CustomizeClash/refs/heads/main/rule-providers/';
 export const CLASH_IP_RULE_SET_BASE_URL = 'https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/';
 export const SURGE_SITE_RULE_SET_BASEURL = 'https://gh-proxy.com/https://github.com/NSZA156/surge-geox-rules/raw/refs/heads/release/geo/geosite/'
 export const SURGE_IP_RULE_SET_BASEURL = 'https://gh-proxy.com/https://github.com/NSZA156/surge-geox-rules/raw/refs/heads/release/geo/geoip/'
@@ -116,6 +117,12 @@ export const UNIFIED_RULES = [
 		name: 'Non-China',
 		outbound: t('outboundNames.Non-China'),
 		site_rules: ['geolocation-!cn'],
+		ip_rules: []
+	},
+	{
+		name: 'HF',
+		outbound: t('outboundNames.HF'),
+		site_rules: ['HF'],
 		ip_rules: []
 	}
 ];
@@ -342,6 +349,18 @@ export function generateClashRuleSets(selectedRules = [], customRules = []) {
       behavior: 'domain',
       url: `${CLASH_SITE_RULE_SET_BASE_URL}geolocation-!cn.mrs`,
       path: './ruleset/geolocation-!cn.mrs',
+      interval: 86400
+    };
+  }
+
+  // modifiy HF rule set if included
+  if(selectedRules.includes('HF')){
+    site_rule_providers['HF'] = {
+      type: 'http',
+      format: 'yaml',
+      behavior: 'domain',
+      url: `${VBONLUK_SITE_RULE_SET_BASE_URL}HF.yaml`,
+      path: './ruleset/HF.yaml',
       interval: 86400
     };
   }
