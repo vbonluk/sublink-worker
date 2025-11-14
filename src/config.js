@@ -497,19 +497,19 @@ export const CLASH_CONFIG = {
         'respect-rules': true,
         'enhanced-mode': 'fake-ip',
         'nameserver': [
+            '223.5.5.5',
+            '119.29.29.29',
+            '114.114.114.114',
+            '119.28.28.28',
             'https://doh.pub/dns-query',
             'https://dns.alidns.com/dns-query',
-            'https://120.53.53.53/dns-query',
-            'https://223.5.5.5/dns-query'
         ],
         'proxy-server-nameserver': [
-            'https://doh.pub/dns-query',
-            'https://dns.alidns.com/dns-query',
             'https://120.53.53.53/dns-query',
-            'https://223.5.5.5/dns-query'
+            'https://223.5.5.5/dns-query',
         ],
         'nameserver-policy': {
-            'geosite:cn,private': 'https://120.53.53.53/dns-query, https://223.5.5.5/dns-query',
+            'geosite:cn,private': 'https://doh.pub/dns-query, https://223.5.5.5/dns-query',
             'geosite:geolocation-!cn': 'https://dns.cloudflare.com/dns-query, https://dns.google/dns-query'
         },
 		'fallback': [
@@ -541,6 +541,11 @@ export const CLASH_CONFIG = {
 			'114.114.114.114',
 			'119.29.29.29',
 			'223.5.5.5'
+		],
+		'direct-nameserver': [
+			'https://doh.pub/dns-query',
+			'https://223.5.5.5/dns-query',
+			'https://doh.360.cn/dns-query'
 		]
     },
     'proxies': [],
