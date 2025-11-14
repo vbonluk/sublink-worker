@@ -450,6 +450,27 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         // Sanitize proxy-groups: ensure their proxy references exist
         const normalize = (s) => typeof s === 'string' ? s.trim() : s;
         const groups = this.config['proxy-groups'] || [];
+
+        // 自动选择分组名列表
+        const autoSelectGroups = [
+            t('outboundNames.AI Services'),
+            t('outboundNames.Non-China'),
+            t('outboundNames.Node Select'),
+            t('outboundNames.Youtube'),
+            t('outboundNames.Google'),
+            t('outboundNames.Telegram'),
+            t('outboundNames.Github'),
+            t('outboundNames.Social Media'),
+            t('outboundNames.Streaming'),
+            t('outboundNames.Cloud Services'),
+        ];
+        const autoSelectName = t('outboundNames.Auto Select');
+        // 广告
+        const adBlockGroups = [
+            t('outboundNames.Ad Block'),
+        ];
+        const adBlockName = t('REJECT');
+
         if (Array.isArray(groups) && groups.length > 0) {
             const proxyNames = new Set((this.config.proxies || []).map(p => normalize(p?.name)).filter(Boolean));
             const groupNames = new Set(groups.map(g => normalize(g?.name)).filter(Boolean));
@@ -459,6 +480,22 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
 
             this.config['proxy-groups'] = groups.map(g => {
                 if (!g || !Array.isArray(g.proxies)) return g;
+
+                // 广告分组优先处理，确保 REJECT 在首位
+                if (adBlockGroups.includes(normalize(g.name))) {
+                    // 移除已有的 REJECT
+                    g.proxies = g.proxies.filter(p => normalize(p) !== normalize(adBlockName));
+                    // 插入 REJECT 到首位
+                    g.proxies.unshift(adBlockName);
+                }
+                // 自动选择分组处理
+                if (autoSelectGroups.includes(normalize(g.name))) {
+                    // 移除已有的自动选择
+                    g.proxies = g.proxies.filter(p => normalize(p) !== normalize(autoSelectName));
+                    // 插入自动选择到首位
+                    g.proxies.unshift(autoSelectName);
+                }
+
                 const filtered = g.proxies
                     .map(x => typeof x === 'string' ? x.trim() : x)
                     .filter(x => typeof x === 'string' && validNames.has(x));
