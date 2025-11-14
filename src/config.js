@@ -493,7 +493,7 @@ export const CLASH_CONFIG = {
     },
     'dns': {
         'enable': true,
-        'ipv6': true,
+        'ipv6': false,
         'respect-rules': true,
         'enhanced-mode': 'fake-ip',
         'nameserver': [
@@ -505,15 +505,39 @@ export const CLASH_CONFIG = {
             'https://223.5.5.5/dns-query'
         ],
         'nameserver-policy': {
-            'geosite:cn,private': [
-                'https://120.53.53.53/dns-query',
-                'https://223.5.5.5/dns-query'
-            ],
-            'geosite:geolocation-!cn': [
-                'https://dns.cloudflare.com/dns-query',
-                'https://dns.google/dns-query'
-            ]
-        }
+            'geosite:cn,private': 'https://120.53.53.53/dns-query, https://223.5.5.5/dns-query',
+            'geosite:geolocation-!cn': 'https://dns.cloudflare.com/dns-query, https://dns.google/dns-query'
+        },
+		'fallback': [
+			'9.9.9.9',
+			'149.112.112.112',
+			'8.8.8.8',
+			'8.8.4.4',
+			'tls://dns.quad9.net',
+			'tls://dns.google',
+			'tls://1.1.1.1',
+			'tls://jp.tiar.app',
+			'tls://dot.tiar.app',
+			'https://dns.quad9.net/dns-query',
+			'https://dns.google/dns-query',
+			'https://dns.cloudflare.com/dns-query',
+			'https://1.1.1.1/dns-query',
+			'https://public.dns.iij.jp/dns-query',
+			'https://jp.tiar.app/dns-query',
+			'https://jp.tiarap.org/dns-query',
+			'https://doh.dnslify.com/dns-query',
+			'https://dns.twnic.tw/dns-query',
+			'https://dns.oszx.co/dns-query',
+			'https://doh.applied-privacy.net/query',
+			'https://dnsforge.de/dns-query',
+			'https://doh.ffmuc.net/dns-query',
+			'https://doh.mullvad.net/dns-query'
+		],
+		'default-nameserver': [
+			'114.114.114.114',
+			'119.29.29.29',
+			'223.5.5.5'
+		]
     },
     'proxies': [],
     'proxy-groups': []
