@@ -18,6 +18,18 @@ export const UNIFIED_RULES = [
 		ip_rules: []
 	},
 	{
+		name: 'VB-CN',
+		outbound: t('outboundNames.VB-CN'),
+		site_rules: ['VB-CN'],
+		ip_rules: []
+	},
+	{
+		name: 'VB-NonCN',
+		outbound: t('outboundNames.VB-NonCN'),
+		site_rules: ['VB-NonCN'],
+		ip_rules: []
+	},,
+	{
 		name: 'HF',
 		outbound: t('outboundNames.HF'),
 		site_rules: ['HF'],
@@ -379,6 +391,30 @@ export function generateClashRuleSets(selectedRules = [], customRules = []) {
       behavior: 'classical',
       url: `${VBONLUK_SITE_RULE_SET_BASE_URL}HFAccess.yaml`,
       path: './ruleset/HFAccess.yaml',
+      interval: 86400
+    };
+  }
+
+  // modifiy VB-CN rule set if included
+  if(selectedRules.includes('VB-CN')){
+    site_rule_providers['VB-CN'] = {
+      type: 'http',
+      format: 'yaml',
+      behavior: 'classical',
+      url: `${VBONLUK_SITE_RULE_SET_BASE_URL}VB-CN.yaml`,
+      path: './ruleset/VB-CN.yaml',
+      interval: 86400
+    };
+  }
+
+  // modifiy VB-NonCN rule set if included
+  if(selectedRules.includes('VB-NonCN')){
+    site_rule_providers['VB-NonCN'] = {
+      type: 'http',
+      format: 'yaml',
+      behavior: 'classical',
+      url: `${VBONLUK_SITE_RULE_SET_BASE_URL}VB-NonCN.yaml`,
+      path: './ruleset/VB-NonCN.yaml',
       interval: 86400
     };
   }
