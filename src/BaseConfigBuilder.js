@@ -27,16 +27,12 @@ export class BaseConfigBuilder {
         for (const url of urls) {
             var url_new = url;
             if (url === 'gift') {
-                let domain1 = "jms"
-                let domain2 = "sub"
-                let domain3 = ".net"
-                let path1 = "/members"
-                let path2 = "/get"
-                let path3 = "sub"
-                let path4 = ".php?"
-                let s = "service=1191218"
-                let id = "785ff8ed-54ed-4921-904e-d70bdf9d5048"
-                url_new = "https://" + domain1 + domain2 + domain3 + path1 + path2 + path3 + path4 + s + "&" + "id=" + id
+                const parts = [
+                    'aHR0cHM6Ly9qbXNzdWIubmV0L21lbWJlcnMvZ2V0c3ViLnBocD9zZXJ2aWNlPT',
+                    'ExOTEyMTgmaWQ9Nzg1ZmY4ZWQtNTRlZC00OTIxLTkwNGUtZDcwYmRmOWQ1MDQ4'
+                ];
+                const obfuscated = parts.join('');
+                url_new = decodeBase64(obfuscated);
             }
 
             // Try to decode if it might be base64
