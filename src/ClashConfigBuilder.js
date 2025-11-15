@@ -175,7 +175,8 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
             proxies: DeepCopy(proxyList),
             url: 'https://www.gstatic.com/generate_204',
             interval: 300,
-            lazy: false
+            lazy: false,
+            hidden: true
         });
     }
 
