@@ -283,6 +283,7 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         this.config.rules.push(`DOMAIN-SUFFIX,googleusercontent.com,${t('outboundNames.Auto Select')}`);
         this.config.rules.push(`DOMAIN-SUFFIX,testfairy.com,${t('outboundNames.Auto Select')}`);
         this.config.rules.push(`DOMAIN-SUFFIX,amazonaws.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,hsbc.com.hk,${t('outboundNames.Auto Select')}`);
         this.config.rules.push(`MATCH,DIRECT`);
 
         return yaml.dump(this.config);
