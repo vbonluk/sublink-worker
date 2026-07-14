@@ -42,6 +42,12 @@ export const UNIFIED_RULES = [
 		ip_rules: []
 	},
 	{
+		name: 'Stream',
+		outbound: t('outboundNames.Stream'),
+		site_rules: ['Stream'],
+		ip_rules: []
+	},
+	{
 		name: 'AI Services',
 		outbound: t('outboundNames.AI Services'),
 		site_rules: ['category-ai-!cn',],
@@ -415,6 +421,18 @@ export function generateClashRuleSets(selectedRules = [], customRules = []) {
       behavior: 'classical',
       url: `${VBONLUK_SITE_RULE_SET_BASE_URL}VB-NonCN.yaml`,
       path: './ruleset/VB-NonCN.yaml',
+      interval: 86400
+    };
+  }
+
+  // modifiy Stream rule set if included
+  if(selectedRules.includes('Stream')){
+    site_rule_providers['Stream'] = {
+      type: 'http',
+      format: 'yaml',
+      behavior: 'classical',
+      url: `https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Stream.yaml`,
+      path: './ruleset/Stream.yaml',
       interval: 86400
     };
   }
