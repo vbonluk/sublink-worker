@@ -107,7 +107,7 @@ const translations = {
       'HFAccess': 'HFAccess',
       'VB-CN': 'VB-CN',
       'VB-NonCN': 'VB-NonCN',
-      'Stream': 'Stream'
+      'Steam': 'Steam'
     },
     groupByCountry: '按国家分组',
     groupByCountryTip: '仅 Clash/Surge/SingBox 生效',
@@ -219,7 +219,7 @@ const translations = {
       'HFAccess': 'HFAccess',
       'VB-CN': 'VB-CN',
       'VB-NonCN': 'VB-NonCN',
-      'Stream': 'Stream'
+      'Steam': 'Steam'
     },
     groupByCountry: 'Group by Country',
     groupByCountryTip: 'Clash/Surge/SingBox only',
@@ -331,7 +331,7 @@ const translations = {
       'HFAccess': 'HFAccess',
       'VB-CN': 'VB-CN',
       'VB-NonCN': 'VB-NonCN',
-      'Stream': 'Stream'
+      'Steam': 'Steam'
     },
     groupByCountry: 'گروه‌بندی بر اساس کشور',
     groupByCountryTip: 'فقط Clash/Surge/SingBox',
@@ -443,7 +443,7 @@ const translations = {
       'HFAccess': 'HFAccess',
       'VB-CN': 'VB-CN',
       'VB-NonCN': 'VB-NonCN',
-      'Stream': 'Stream'
+      'Steam': 'Steam'
     },
     groupByCountry: 'Группировать по странам',
     groupByCountryTip: 'Только для Clash/Surge/SingBox',

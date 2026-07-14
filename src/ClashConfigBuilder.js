@@ -465,7 +465,7 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
             t('outboundNames.Cloud Services'),
             //t('outboundNames.HF'),
             t('outboundNames.VB-NonCN'),
-            t('outboundNames.Stream'),
+            t('outboundNames.Steam'),
         ];
         const autoSelectName = t('outboundNames.Auto Select');
         // 广告

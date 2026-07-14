@@ -42,9 +42,9 @@ export const UNIFIED_RULES = [
 		ip_rules: []
 	},
 	{
-		name: 'Stream',
-		outbound: t('outboundNames.Stream'),
-		site_rules: ['Stream'],
+		name: 'Steam',
+		outbound: t('outboundNames.Steam'),
+		site_rules: ['Steam'],
 		ip_rules: []
 	},
 	{
@@ -425,14 +425,14 @@ export function generateClashRuleSets(selectedRules = [], customRules = []) {
     };
   }
 
-  // modifiy Stream rule set if included
-  if(selectedRules.includes('Stream')){
-    site_rule_providers['Stream'] = {
+  // modifiy Steam rule set if included
+  if(selectedRules.includes('Steam')){
+    site_rule_providers['Steam'] = {
       type: 'http',
       format: 'yaml',
       behavior: 'classical',
-      url: `https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Stream.yaml`,
-      path: './ruleset/Stream.yaml',
+      url: `https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml`,
+      path: './ruleset/Steam.yaml',
       interval: 86400
     };
   }
