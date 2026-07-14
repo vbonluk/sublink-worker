@@ -463,7 +463,7 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
             t('outboundNames.Social Media'),
             t('outboundNames.Streaming'),
             t('outboundNames.Cloud Services'),
-            t('outboundNames.HF'),
+            //t('outboundNames.HF'),
             t('outboundNames.VB-NonCN'),
             t('outboundNames.Stream'),
         ];
