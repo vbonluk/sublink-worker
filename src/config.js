@@ -592,16 +592,12 @@ export const CLASH_CONFIG = {
 			'114.114.114.114',
 			'119.29.29.29'
 		],
-		'proxy-server-nameserver': [],
+		'proxy-server-nameserver': [
+			'https://dns.google/dns-query'
+		],
 		'nameserver-policy': {
-			'geosite:cn,private': [
-				'223.5.5.5',
-				'114.114.114.114'
-			],
-			'geosite:geolocation-!cn': [
-				'https://dns.cloudflare.com/dns-query',
-				'https://dns.google/dns-query'
-			]
+			'geosite:cn,private': '223.5.5.5, 114.114.114.114',
+			'geosite:geolocation-!cn': 'https://dns.cloudflare.com/dns-query'
 		},
 		'fallback': [
 			'9.9.9.9',
