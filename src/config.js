@@ -508,6 +508,41 @@ export const CLASH_CONFIG = {
     'rule-providers': {
       // 将由代码自动生成
     },
+	'dns': {
+		'enable': true,
+		'ipv6': false,
+		'respect-rules': false,
+		'enhanced-mode': 'fake-ip',
+		'nameserver': [
+			'223.5.5.5',
+			'114.114.114.114',
+			'119.29.29.29'
+		],
+		'proxy-server-nameserver': [],
+		'nameserver-policy': {
+			'geosite:cn,private': [
+				'223.5.5.5',
+				'114.114.114.114'
+			],
+			'geosite:geolocation-!cn': [
+				'https://dns.cloudflare.com/dns-query',
+				'https://dns.google/dns-query'
+			]
+		},
+		'fallback': [
+			'9.9.9.9',
+			'8.8.8.8'
+		],
+		'default-nameserver': [
+			'114.114.114.114',
+			'119.29.29.29',
+			'223.5.5.5'
+		],
+		'direct-nameserver': [
+			'https://doh.pub/dns-query',
+			'https://223.5.5.5/dns-query'
+		]
+    },
     'proxies': [],
     'proxy-groups': []
 };
