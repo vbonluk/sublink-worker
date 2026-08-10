@@ -583,50 +583,23 @@ export const CLASH_CONFIG = {
       // 将由代码自动生成
     },
     'dns': {
-        'enable': true,
-        'ipv6': false,
-        'respect-rules': true,
-        'enhanced-mode': 'fake-ip',
-        'nameserver': [
-            '223.5.5.5',
-            '119.29.29.29',
-            '114.114.114.114',
-            '119.28.28.28',
-            'https://doh.pub/dns-query',
-            'https://dns.alidns.com/dns-query',
-        ],
-        'proxy-server-nameserver': [
-            'https://120.53.53.53/dns-query',
-            'https://223.5.5.5/dns-query',
-        ],
-        'nameserver-policy': {
-            'geosite:cn,private': 'https://doh.pub/dns-query, https://223.5.5.5/dns-query',
-            'geosite:geolocation-!cn': 'https://dns.cloudflare.com/dns-query, https://dns.google/dns-query'
-        },
+		'enable': true,
+		'ipv6': false,
+		'respect-rules': false,
+		'enhanced-mode': 'fake-ip',
+		'nameserver': [
+			'223.5.5.5',
+			'114.114.114.114',
+			'119.29.29.29'
+		],
+		'proxy-server-nameserver': [],
+		'nameserver-policy': {
+			'geosite:cn,private': '223.5.5.5, 114.114.114.114',
+			'geosite:geolocation-!cn': 'https://dns.cloudflare.com/dns-query, https://dns.google/dns-query'
+		},
 		'fallback': [
 			'9.9.9.9',
-			'149.112.112.112',
-			'8.8.8.8',
-			'8.8.4.4',
-			'tls://dns.quad9.net',
-			'tls://dns.google',
-			'tls://1.1.1.1',
-			'tls://jp.tiar.app',
-			'tls://dot.tiar.app',
-			'https://dns.quad9.net/dns-query',
-			'https://dns.google/dns-query',
-			'https://dns.cloudflare.com/dns-query',
-			'https://1.1.1.1/dns-query',
-			'https://public.dns.iij.jp/dns-query',
-			'https://jp.tiar.app/dns-query',
-			'https://jp.tiarap.org/dns-query',
-			'https://doh.dnslify.com/dns-query',
-			'https://dns.twnic.tw/dns-query',
-			'https://dns.oszx.co/dns-query',
-			'https://doh.applied-privacy.net/query',
-			'https://dnsforge.de/dns-query',
-			'https://doh.ffmuc.net/dns-query',
-			'https://doh.mullvad.net/dns-query'
+			'8.8.8.8'
 		],
 		'default-nameserver': [
 			'114.114.114.114',
@@ -635,8 +608,7 @@ export const CLASH_CONFIG = {
 		],
 		'direct-nameserver': [
 			'https://doh.pub/dns-query',
-			'https://223.5.5.5/dns-query',
-			'https://doh.360.cn/dns-query'
+			'https://223.5.5.5/dns-query'
 		]
     },
     'proxies': [],
