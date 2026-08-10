@@ -596,8 +596,13 @@ export const CLASH_CONFIG = {
 			'https://dns.google/dns-query'
 		],
 		'nameserver-policy': {
-			'geosite:cn,private': '223.5.5.5, 114.114.114.114',
-			'geosite:geolocation-!cn': 'https://dns.cloudflare.com/dns-query'
+			'geosite:cn,private': [
+				'223.5.5.5',
+				'114.114.114.114'
+			],
+			'geosite:geolocation-!cn': [
+				'https://dns.cloudflare.com/dns-query'
+			]
 		},
 		'fallback': [
 			'9.9.9.9',
