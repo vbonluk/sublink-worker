@@ -284,6 +284,20 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
         this.config.rules.push(`DOMAIN-SUFFIX,testfairy.com,${t('outboundNames.Auto Select')}`);
         this.config.rules.push(`DOMAIN-SUFFIX,amazonaws.com,${t('outboundNames.Auto Select')}`);
         this.config.rules.push(`DOMAIN-SUFFIX,hsbc.com.hk,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,ocsp.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,ocsp2.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,valid.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,crl.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,certs.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,appattest.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,ppq.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,gdmf.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,mesu.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,itunes.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,apps.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,mzstatic.apple.com,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,itunes.apple.com.edgesuite.net,${t('outboundNames.Auto Select')}`);
+        this.config.rules.push(`DOMAIN-SUFFIX,aaplimg.com,${t('outboundNames.Auto Select')}`);
         this.config.rules.push(`MATCH,DIRECT`);
 
         return yaml.dump(this.config);
