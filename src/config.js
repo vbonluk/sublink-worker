@@ -210,6 +210,17 @@ export function generateRules(selectedRules = [], customRules = []) {
 	}
   
 	const rules = [];
+
+	// ✅ 优先插入 Tailscale 网段，排在所有规则第一位
+	rules.unshift({
+		site_rules: [],
+		ip_rules: [],
+		domain_suffix: [],
+		ip_cidr: ['100.64.0.0/10'],
+		domain_keyword: [],
+		protocol: [],
+		outbound: 'DIRECT'
+	});
   
 	UNIFIED_RULES.forEach(rule => {
 	  if (selectedRules.includes(rule.name)) {
@@ -582,10 +593,6 @@ export const CLASH_CONFIG = {
     'rule-providers': {
       // 将由代码自动生成
     },
-				'rules': [
-        // Tailscale 内网网段，放在全部规则最前面
-        'IP-CIDR,100.64.0.0/10,DIRECT,no-resolve'
-    ],
     'dns': {
 		'enable': true,
 		'ipv6': false,
