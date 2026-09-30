@@ -605,7 +605,10 @@ export const CLASH_CONFIG = {
         '*.local',
         '*.tailscale.com',
         '*.tailscale.io',
-        '*.ts.net'
+        '*.ts.next,
+								"miwifi.com",
+		      "*.miwifi.com",
+        "tplogin.cn"
   ],
 		'nameserver': [
 			'223.5.5.5',
