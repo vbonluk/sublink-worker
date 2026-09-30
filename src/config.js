@@ -201,54 +201,56 @@ export function getOutbounds(selectedRuleNames) {
 
 // Helper function to generate rules based on selected rule names
 export function generateRules(selectedRules = [], customRules = []) {
-	if (typeof selectedRules === 'string' && PREDEFINED_RULE_SETS[selectedRules]) {
-	  selectedRules = PREDEFINED_RULE_SETS[selectedRules];
-	}
-  
-	if (!selectedRules || selectedRules.length === 0) {
-	  selectedRules = PREDEFINED_RULE_SETS.minimal;
-	}
-  
-	const rules = [];
-
-	// ✅ 优先插入 Tailscale 网段，排在所有规则第一位
-	rules.unshift({
-		site_rules: [],
-		ip_rules: [],
-		domain_suffix: [],
-		ip_cidr: ['100.64.0.0/10'],
-		domain_keyword: [],
-		protocol: [],
-		outbound: 'DIRECT'
-	});
-  
-	UNIFIED_RULES.forEach(rule => {
-	  if (selectedRules.includes(rule.name)) {
-		rules.push({
-		  site_rules: rule.site_rules,
-		  ip_rules: rule.ip_rules,
-		  domain_suffix: rule?.domain_suffix,
-		  ip_cidr: rule?.ip_cidr,
-		  outbound: rule.name
-		});
-	  }
-	});
-  
-	customRules.reverse();
-	customRules.forEach((rule) => {
-		rules.unshift({
-			site_rules: rule.site.split(','),
-			ip_rules: rule.ip.split(','),
-			domain_suffix: rule.domain_suffix ? rule.domain_suffix.split(',') : [],
-			domain_keyword: rule.domain_keyword ? rule.domain_keyword.split(',') : [],
-			ip_cidr: rule.ip_cidr ? rule.ip_cidr.split(',') : [],
-			protocol: rule.protocol ? rule.protocol.split(',') : [],
-			outbound: rule.name
-		});
-		});
-  
-	return rules;
+  if (typeof selectedRules === 'string' && PREDEFINED_RULE_SETS[selectedRules]) {
+    selectedRules = PREDEFINED_RULE_SETS[selectedRules];
   }
+
+  if (!selectedRules || selectedRules.length === 0) {
+    selectedRules = PREDEFINED_RULE_SETS.minimal;
+  }
+
+  const rules = [];
+
+  // 第一步：先放入所有业务规则
+  UNIFIED_RULES.forEach(rule => {
+    if (selectedRules.includes(rule.name)) {
+      rules.push({
+        site_rules: rule.site_rules,
+        ip_rules: rule.ip_rules,
+        domain_suffix: rule?.domain_suffix,
+        ip_cidr: rule?.ip_cidr,
+        outbound: rule.name
+      });
+    }
+  });
+
+  // 第二步：自定义规则，插到业务规则前面
+  customRules.reverse();
+  customRules.forEach((rule) => {
+    rules.unshift({
+      site_rules: rule.site.split(','),
+      ip_rules: rule.ip.split(','),
+      domain_suffix: rule.domain_suffix ? rule.domain_suffix.split(',') : [],
+      domain_keyword: rule.domain_keyword ? rule.domain_keyword.split(',') : [],
+      ip_cidr: rule.ip_cidr ? rule.ip_cidr.split(',') : [],
+      protocol: rule.protocol ? rule.protocol.split(',') : [],
+      outbound: rule.name
+    });
+  });
+
+  // 第三步：最后插入 Tailscale 网段，全局最高优先级，永远第一条
+  rules.unshift({
+    site_rules: [],
+    ip_rules: [],
+    domain_suffix: [],
+    ip_cidr: ['100.64.0.0/10'],
+    domain_keyword: [],
+    protocol: [],
+    outbound: 'DIRECT'
+  });
+
+  return rules;
+}
 
 
 export function generateRuleSets(selectedRules = [], customRules = []) {
