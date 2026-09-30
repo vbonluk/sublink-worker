@@ -582,11 +582,22 @@ export const CLASH_CONFIG = {
     'rule-providers': {
       // 将由代码自动生成
     },
+				'rules': [
+        // Tailscale 内网网段，放在全部规则最前面
+        'IP-CIDR,100.64.0.0/10,DIRECT,no-resolve'
+    ],
     'dns': {
 		'enable': true,
 		'ipv6': false,
 		'respect-rules': false,
 		'enhanced-mode': 'fake-ip',
+		'fake-ip-filter': [
+        '*.lan',
+        '*.local',
+        '*.tailscale.com',
+        '*.tailscale.io',
+        '*.ts.net'
+  ],
 		'nameserver': [
 			'223.5.5.5',
 			'114.114.114.114',
