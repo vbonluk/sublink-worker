@@ -605,7 +605,7 @@ export const CLASH_CONFIG = {
         '*.local',
         '*.tailscale.com',
         '*.tailscale.io',
-        '*.ts.next,
+        '*.ts.next',
 								"miwifi.com",
 		      "*.miwifi.com",
         "tplogin.cn"
@@ -640,6 +640,28 @@ export const CLASH_CONFIG = {
 			'https://doh.pub/dns-query',
 			'https://223.5.5.5/dns-query'
 		]
+    },
+				'sniffer': {
+        'enable': true,
+        'force-dns-mapping': true,
+        'parse-pure-ip': true,
+        'sniff': {
+            'TLS': {
+                'ports': [443, 8443]
+            },
+            'QUIC': {
+                'ports': [443, 8443]
+            }
+        },
+        'skip-domain': [
+            '*.lan',
+            'localhost'
+        ]
+    },
+    'tun': {
+        'enable': true,
+        'udp': true,
+        'stack': 'system'
     },
     'proxies': [],
     'proxy-groups': []
