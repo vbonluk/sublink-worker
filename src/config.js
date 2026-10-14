@@ -608,7 +608,13 @@ export const CLASH_CONFIG = {
         '*.ts.next',
 								"miwifi.com",
 		      "*.miwifi.com",
-        "tplogin.cn"
+        "tplogin.cn",
+								// 新增TikTok域名，脱离fakeip，使用真实IP解析
+        '*.tiktokcdn-us.com',
+        '*.tiktokv.us',
+        '*.tiktokcdn.com',
+        '*.tiktokv.com',
+        '*.webcast.tiktokv.com'
   ],
 		'nameserver': [
 			'223.5.5.5',
@@ -640,28 +646,6 @@ export const CLASH_CONFIG = {
 			'https://doh.pub/dns-query',
 			'https://223.5.5.5/dns-query'
 		]
-    },
-				'sniffer': {
-        'enable': true,
-        'force-dns-mapping': true,
-        'parse-pure-ip': true,
-        'sniff': {
-            'TLS': {
-                'ports': [443, 8443]
-            },
-            'QUIC': {
-                'ports': [443, 8443]
-            }
-        },
-        'skip-domain': [
-            '*.lan',
-            'localhost'
-        ]
-    },
-    'tun': {
-        'enable': true,
-        'udp': true,
-        'stack': 'system'
     },
     'proxies': [],
     'proxy-groups': []
