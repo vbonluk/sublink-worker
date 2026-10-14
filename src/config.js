@@ -608,13 +608,7 @@ export const CLASH_CONFIG = {
         '*.ts.next',
 								"miwifi.com",
 		      "*.miwifi.com",
-        "tplogin.cn",
-								// 新增TikTok域名，脱离fakeip，使用真实IP解析
-        '*.tiktokcdn-us.com',
-        '*.tiktokv.us',
-        '*.tiktokcdn.com',
-        '*.tiktokv.com',
-        '*.webcast.tiktokv.com'
+        "tplogin.cn"
   ],
 		'nameserver': [
 			'223.5.5.5',
