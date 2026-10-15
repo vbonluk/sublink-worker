@@ -612,11 +612,12 @@ export const CLASH_CONFIG = {
 	],
 		'nameserver': [
 			'223.5.5.5',
-			'114.114.114.114',
-			'119.29.29.29'
+			'119.29.29.29',
+			'114.114.114.114'
 		],
 		'proxy-server-nameserver': [
-			'https://dns.google/dns-query'
+			'https://223.5.5.5/dns-query',
+			'https://doh.pub/dns-query'
 		],
 		'nameserver-policy': {
 			'geosite:cn,private': [
@@ -624,12 +625,12 @@ export const CLASH_CONFIG = {
 				'114.114.114.114'
 			],
 			'geosite:geolocation-!cn': [
-				'https://dns.cloudflare.com/dns-query'
+				'https://dns.cloudflare.com/dns-query#🌐 社交媒体'
 			]
 		},
 		'fallback': [
-			'9.9.9.9',
-			'8.8.8.8'
+			'https://9.9.9.9/dns-query',
+			'https://8.8.8.8/dns-query'
 		],
 		'default-nameserver': [
 			'114.114.114.114',
