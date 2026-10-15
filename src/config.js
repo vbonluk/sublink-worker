@@ -616,8 +616,7 @@ export const CLASH_CONFIG = {
 			'114.114.114.114'
 		],
 		'proxy-server-nameserver': [
-			'https://223.5.5.5/dns-query',
-			'https://doh.pub/dns-query'
+			'https://dns.google/dns-query'
 		],
 		'nameserver-policy': {
 			'geosite:cn,private': [
@@ -629,8 +628,8 @@ export const CLASH_CONFIG = {
 			]
 		},
 		'fallback': [
-			'https://9.9.9.9/dns-query',
-			'https://8.8.8.8/dns-query'
+			'9.9.9.9',
+			'8.8.8.8'
 		],
 		'default-nameserver': [
 			'114.114.114.114',
