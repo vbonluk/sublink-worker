@@ -625,7 +625,7 @@ export const CLASH_CONFIG = {
 				'114.114.114.114'
 			],
 			'geosite:geolocation-!cn': [
-				'https://dns.cloudflare.com/dns-query#🌐 社交媒体'
+				'https://dns.cloudflare.com/dns-query'
 			]
 		},
 		'fallback': [
