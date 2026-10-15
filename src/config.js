@@ -598,7 +598,7 @@ export const CLASH_CONFIG = {
     'dns': {
 		'enable': true,
 		'ipv6': false,
-		'respect-rules': false,
+		'respect-rules': true,
 		'enhanced-mode': 'fake-ip',
 		'fake-ip-filter': [
         '*.lan',
@@ -606,10 +606,10 @@ export const CLASH_CONFIG = {
         '*.tailscale.com',
         '*.tailscale.io',
         '*.ts.next',
-								"miwifi.com",
-		      "*.miwifi.com",
-        "tplogin.cn"
-  ],
+		'miwifi.com',
+		'*.miwifi.com',
+        'tplogin.cn'
+	],
 		'nameserver': [
 			'223.5.5.5',
 			'114.114.114.114',
